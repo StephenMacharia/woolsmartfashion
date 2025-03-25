@@ -1,0 +1,83 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.navlink{
+  background: brown;
+  margin-right: 10px;
+  padding: 10px;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 5px;}
+.productimage {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+}
+.footer-background-color{
+  background-color: rgb(71, 37, 224);
+}
+.bootom-footer{
+  background-color: rgb(32, 17, 167);
+}
+.backstyling{
+  background-color: rgb(161, 203, 252);
+}
+.socialspictures{
+  height: 70px;
+  width: 70px;
+  margin-right: 5px;
+}
+
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.heading {
+  display: inline-block;
+  font-size: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid black;
+  animation: typing 3s steps(15) forwards, blink 0.8s infinite;
+}
