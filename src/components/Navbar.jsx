@@ -2,10 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "font-awesome/css/font-awesome.min.css";
 
-// Mock cart count for demonstration (replace with your actual state or context)
-const cartItemCount = 3;
-
-const Navbar = () => {
+const Navbar = ({ cartItemCount }) => {
   return (
     <motion.nav
       className="navbar navbar-expand-md navbar-light bg-light shadow-sm mt-1"
@@ -47,7 +44,7 @@ const Navbar = () => {
             <Link to="/signup" className="btn btn-outline-primary me-2">Register</Link>
           </li>
 
-          {/* Cart Icon with Badge */}
+          {/* Cart Icon with Dynamic Badge */}
           <li className="nav-item position-relative me-2">
             <Link to="/cart" className="btn btn-outline-primary position-relative">
               <i className="fa fa-shopping-cart"></i>
