@@ -10,14 +10,21 @@ import Signup from './components/Signup';
 import Mpesapayment from './components/Mpesapayment';
 import Cart from './components/Cart';
 import"bootstrap/dist/js/bootstrap.min.js";
+import ChatBot from './components/ChatBot';
+
 
 import Footer from './components/footer';
 import Aboutus from './components/Aboutus';
+import Profile from './components/Profile';
+
+
 
 
 
 
 function App() {
+  
+  
   return (
    <Router>
      <div className="App">
@@ -35,10 +42,12 @@ function App() {
           <Route path='/Mpesapayment' element={<Mpesapayment/>}/>
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/Aboutus' element={<Aboutus/>}/>
+          <Route path="/profile" element={<Profile />} />
           
       </Routes>
     
       <Footer/>
+      <ChatBot/>
       
     </div>
    </Router>
