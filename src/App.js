@@ -26,6 +26,7 @@ import Profile from './components/Profile';
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
+  const [cartItemCount, setCartItemCount] = useState(0);
   const user_Id = JSON.parse(localStorage.getItem('user') || '{}')?.user_id;
 
   useEffect(() => {
@@ -58,7 +59,7 @@ function App() {
           <Route path='/signin'element={<Signin/>}/>
           <Route path='/signup'element={<Signup/>}/>
           <Route path='/Mpesapayment' element={<Mpesapayment/>}/>
-          <Route path='/cart' element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
+          <Route path='/cart' element={<Cart cartItems={cartItems} setCartItems={setCartItems}  setCartItemCount={setCartItemCount}/>} />
           <Route path='/Aboutus' element={<Aboutus/>}/>
           <Route path="/profile" element={<Profile />} />
           
