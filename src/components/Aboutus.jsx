@@ -49,7 +49,7 @@ const Aboutus = () => {
 
             <h3 className="mt-4 text-info">What Makes Us Different?</h3>
             <ul className="list-group list-group-flush mb-3">
-              <li className="list-group-item">✅ 100% ethically sourced wool</li>
+              <li className="list-group-item">✅ 100% ethically sourced Designs</li>
               <li className="list-group-item">🚚 Fast nationwide delivery</li>
               <li className="list-group-item">🎁 Handpicked seasonal collections</li>
               <li className="list-group-item">🤝 Dedicated customer support</li>

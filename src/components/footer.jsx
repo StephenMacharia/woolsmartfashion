@@ -5,13 +5,35 @@ import { Facebook, Instagram, Mail, MessageCircle } from 'lucide-react';
 const Footer = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    console.log('Feedback sent:', { email, message });
-    alert('Thanks for your feedback. We value your input!');
-    setEmail('');
-    setMessage('');
+    setLoading(true);
+
+    try {
+      const res = await fetch('https://formspree.io/f/xrbpvbda', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({ email, message }),
+      });
+
+      if (res.ok) {
+        alert('Thanks for your feedback. We value your input!');
+        setEmail('');
+        setMessage('');
+      } else {
+        alert('There was an error sending your feedback. Please try again later.');
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Network error. Please try again later.');
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -75,8 +97,9 @@ const Footer = () => {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                value="Submit Feedback"
+                value={loading ? 'Sending...' : 'Submit Feedback'}
                 className="btn btn-outline-info w-100 fw-bold"
+                disabled={loading}
               />
             </form>
           </motion.div>
